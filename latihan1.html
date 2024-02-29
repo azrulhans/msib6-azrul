@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan pertama</title>
+    <!-- pemanggilan css external -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <style>
+      p{
+        color: rebeccapurple;
+        text-align: justify;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 12pt;
+      }
+    </style> -->
+  </head>
+  <body bgcolor="khaki">
+    <!-- buat gambar berjalan dan biodata -->
+    
+    <h1 align="center">
+        <marquee behavior="" direction="right" scrolldelay="100">
+        welcome to myhomepage
+    </marquee>
+    </h1>
+    <p align="right" id="atas"><a href="#bawah">kebawah</a></p>
+    <p id="paragraf">
+      <img src="./img/foto1.jpg" alt="gambar profil" width="10%" align="left" hspace="10">
+      <!-- <embed src="./sound/rington.mp3" type="" > -->
+      <!-- <img src="data:image/jpeg;base64,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" alt="" width="10%" align="left" hspace="10"> -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum quod, dicta neque temporibus earum id voluptatum dolorem hic dolores officiis laborum ipsam laudantium optio deserunt, beatae odit enim minus atque voluptates vel sapiente. Quos ullam distinctio error eos, laudantium est impedit amet possimus tenetur aliquam, laborum iste nesciunt at dolores molestiae! Iusto laudantium facilis, libero nobis, omnis dicta consequuntur dolor sint ratione at ipsum voluptatibus! Velit dolores quam quis, dolorum quo necessitatibus repellat et autem delectus placeat enim hic aut voluptatibus, magnam sequi. Magnam ratione libero magni, temporibus adipisci, beatae nisi sed ea maxime iusto consectetur minus autem molestiae?
+    </p>
+    <p style="text-align: center; color: blueviolet;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi nostrum libero totam aut? Eaque odio porro excepturi deleniti fugit nemo doloremque atque culpa impedit amet explicabo, fuga omnis, iusto maxime similique vero eos hic id? Ipsam expedita cumque maiores enim quia quae ut, temporibus sequi ad fugit repudiandae dolores distinctio quo aliquid ducimus harum ullam sint, reprehenderit quidem cum reiciendis.
+    </p>
+    <p align="right">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores in facilis numquam facere perspiciatis vitae magni eaque officiis, accusamus qui consequatur libero doloremque incidunt ut repellat consequuntur eos rem est similique nostrum earum quas! Quos aliquam ipsum atque odit doloribus?
+    </p>
+
+    <fieldset>
+        <legend>
+            <font>
+                Tentang Saya
+            </font>
+        </legend>
+    
+    <ol type="A">
+      <li>Pendidikan</li>
+      <ul type="square">
+        <li>SD</li>
+        <li>SMP</li>
+        <li>SMA</li>
+        <li>Kuliah</li>
+        <ol type="a">
+          <li>semester1</li>
+          <li>semester2</li>
+          <li>semester3</li>
+        </ol>
+      </ul>
+      <li>Hobi</li>
+      <ul type="disc">
+        <li>berenang</li>
+        <li>menulis</li>
+        <li>Membaca</li>
+      </ul>
+      <a href="latihan2.html">
+      <li>Menu favorite</li></a>
+      <ul type="en">
+        <li>Makanan</li>
+        <li>Minuman</li>
+      </ol>
+    </ol>
+</fieldset>
+<p align="right" id="bawah"><a href="#atas">Atas</a></p>
+  </body>
+</html>

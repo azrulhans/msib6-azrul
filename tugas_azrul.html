@@ -1,0 +1,182 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var addButton = document.createElement("button");
+    document.body.appendChild(addButton);
+    addButton.textContent = "Tambah Data Pegawai";
+
+    var table = document.createElement("table");
+    table.setAttribute("border", "1");
+
+    var thead = document.createElement("thead");
+    var tbody = document.createElement("tbody");
+    var tfoot = document.createElement("tfoot");
+
+    var headerRow = document.createElement("tr");
+
+    var kolom_thead = [
+      "Nama Pegawai",
+      "Jabatan",
+      "Status",
+      "Gaji Pokok",
+      "Tunjangan Jabatan",
+      "Bpjs",
+      "Tunjangan Keluarga",
+    ];
+
+    kolom_thead.forEach(function (headerText) {
+      var th = document.createElement("th");
+      th.textContent = headerText;
+      headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    var gaji_pokok = 15000000; // Assuming a base salary of 15,000,000
+
+    var pegawai = {
+      nama_pegawai: "Ridwan",
+      jabatan: "Manager",
+      status: "Menikah",
+      gaji_pokok: gaji_pokok,
+      tunjangan_jabatan: gaji_pokok * 0.15,
+      bpjs: gaji_pokok * 0.1,
+      tunjangan_keluarga: gaji_pokok * 0.2,
+    };
+
+    var tbody_row = document.createElement("tr");
+
+    Object.values(pegawai).forEach((value) => {
+      var td = document.createElement("td");
+      if (typeof value === "number") {
+        td.textContent = "Rp. " + value.toLocaleString("id-ID");
+      } else {
+        td.textContent = value;
+      }
+      tbody_row.appendChild(td);
+    });
+    tbody.appendChild(tbody_row);
+
+    var row_total = document.createElement("tr");
+    // Create header cells
+    var th1 = document.createElement("th");
+    th1.setAttribute("colspan", "2");
+    th1.textContent = "Total Gaji";
+
+    // Create data cell
+    var td = document.createElement("td");
+    td.className = "total_gaji";
+    td.setAttribute("colspan", "5");
+    td.setAttribute("style", "text-align: center");
+    var totalSalary =
+      gaji_pokok +
+      pegawai.tunjangan_jabatan +
+      pegawai.bpjs +
+      pegawai.tunjangan_keluarga;
+
+    td.textContent = "Rp. " + totalSalary.toLocaleString("id-ID");
+    row_total.appendChild(th1);
+    row_total.appendChild(td);
+    tfoot.appendChild(row_total);
+
+    table.appendChild(tbody);
+    table.appendChild(tfoot);
+
+    // Ketika Button Diklick
+    addButton.addEventListener("click", function () {
+      var nama_pegawai;
+      var jabatan;
+      var status_pegawai;
+      var pegawai_gaji_pokok;
+      var tunjangan_keluarga;
+
+      do {
+        nama_pegawai = prompt("Masukkan Nama Pegawai:");
+      } while (nama_pegawai === "" || nama_pegawai === null);
+      do {
+        jabatan = prompt(
+          "Masukkan Jabatan (Manager/Asisten/Staf):"
+        ).toLowerCase();
+      } while (jabatan === "" || jabatan === null || !["manager", "asisten", "staf"].includes(jabatan));
+
+      do {
+        status_pegawai = prompt(
+          "Masukkan Status Pegawai (belum/sudah/menikah):"
+        ).toLowerCase();
+      } while (status_pegawai === "" || status_pegawai === null || !["belum", "sudah", "menikah"].includes(status_pegawai));
+
+      switch (jabatan.toLowerCase()) {
+        case "manager":
+          pegawai_gaji_pokok = 15000000;
+          break;
+        case "asisten":
+          pegawai_gaji_pokok = 10000000;
+          break;
+        case "staf":
+          pegawai_gaji_pokok = 5000000;
+          break;
+        default:
+          alert("Jabatan tidak valid");
+          return;
+      }
+
+      switch (status_pegawai.toLowerCase()) {
+        case "belum":
+          tunjangan_keluarga = 0;
+          break;
+        case "sudah":
+        case "menikah":
+          tunjangan_keluarga = pegawai_gaji_pokok * 0.2;
+          break;
+        default:
+          alert("Status Pegawai tidak valid");
+          return;
+      }
+
+      var tambah_pegawai_baru = {
+        nama_pegawai: nama_pegawai,
+        jabatan: jabatan,
+        status: status_pegawai,
+        gaji_pokok: pegawai_gaji_pokok,
+        tunjangan_jabatan: pegawai_gaji_pokok * 0.15,
+        bpjs: pegawai_gaji_pokok * 0.1,
+        tunjangan_keluarga: tunjangan_keluarga,
+      };
+
+      var tbody_row_data_baru = document.createElement("tr");
+
+      Object.values(tambah_pegawai_baru).forEach((value) => {
+        var td = document.createElement("td");
+        if (typeof value === "number") {
+          td.textContent = "Rp. " + value.toLocaleString("id-ID");
+        } else {
+          td.textContent = value;
+        }
+        tbody_row_data_baru.appendChild(td);
+      });
+      tbody.appendChild(tbody_row_data_baru);
+
+      var total_gaji_keseluruhan_pegawai_baru =
+        pegawai_gaji_pokok +
+        tambah_pegawai_baru.tunjangan_jabatan +
+        tambah_pegawai_baru.bpjs +
+        tambah_pegawai_baru.tunjangan_keluarga;
+
+      var update_total_gaji = document.querySelector(".total_gaji");
+
+      if (update_total_gaji) {
+        var ambil_angka_gaji_sekarang = update_total_gaji.innerHTML;
+        var nilaiTanpaRp = ambil_angka_gaji_sekarang.replace(/\D/g, "");
+        var total_gaji_kemarin = parseInt(nilaiTanpaRp, 10);
+
+        update_total_gaji.innerHTML =
+          "Rp." +
+          (
+            total_gaji_kemarin + total_gaji_keseluruhan_pegawai_baru
+          ).toLocaleString("id-ID");
+      }
+    });
+
+    document.body.appendChild(table);
+  });
+</script>

@@ -1,0 +1,48 @@
+<script>
+  let pelanggan = "siti";
+  let produk = "KULKAS";
+
+  //   if (produk == "TV") {
+  //     harsat = 300000;
+  //   } else if (produk == "Kulkas") {
+  //     harsat = 400000;
+  //   } else if (produk == "AC") {
+  //     harsat = 500000;
+  //   } else {
+  //     harsat = 0;
+  //   }
+  let harsat = 0;
+  switch (produk) {
+    case "TV":
+      harsat = 300000;
+      break;
+    case "KULKAS":
+      harsat = 400000;
+      break;
+    case "AC":
+      harsat = 500000;
+      break;
+    default:
+      harsat = 0;
+  }
+
+  let jmlbeli = 15;
+  let bruto = harsat * jmlbeli;
+
+  //ternari
+  let diskon = produk == "AC" ? 0.1 * bruto : 0;
+
+  document.write(
+    "Data pembelian" +
+      "<br> Pelanggan : " +
+      pelanggan +
+      "<br> Produk pilihan : " +
+      produk +
+      "<br> Harga Satuan : " +
+      harsat +
+      "<br> Harga Kotor : " +
+      bruto +
+      "<br> Diskon : " +
+      diskon
+  );
+</script>

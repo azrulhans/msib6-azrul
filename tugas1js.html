@@ -1,0 +1,55 @@
+<script>
+  let pegawai = "Ridwan";
+  let jabatan = "manager";
+  let status = "menikah";
+  let gajipokok;
+
+  if (jabatan >= "manager") {
+    gajipokok = 15000000;
+  } else if (jabatan >= "asisten manager") {
+    gajipokok = 10000000;
+  } else if (jabatan >= "staf") {
+    gajipokok = 5000000;
+  } else {
+    gajipokok = 0;
+  }
+  let tunjab = 0.15 * gajipokok;
+  let bpjs = gajipokok * 0.1;
+
+  //ternari
+  let tunkel = status >= "menikah" ? 0.2 * gajipokok : 0;
+  let totalGaji = gajipokok + tunjab + tunkel + bpjs;
+
+  document.write("<h1 align ='center' >PT. Bitlab Developer Indonesia");
+  document.write("<table align='center' border='1' cellpadding='10'>");
+  document.write(
+    "<thead ><tr  style='background-color :aqua;'><th>Nama Pegawai</th><th>Jabatan</th><th>Status</th><th>Gaji Pokok</th><th>Tunjangan Jabatan</th><th>BPJS</th><th>Tunjangan Keluarga</th><th>Total Gaji</th></tr></thead>"
+  );
+  document.write("<tbody>");
+  document.write(
+    "<tr align='center'><td>" +
+      pegawai +
+      "</td><td>" +
+      jabatan +
+      "</td><td>" +
+      status +
+      "</td><td>" +
+      gajipokok +
+      "</td><td>" +
+      tunjab +
+      "</td><td>" +
+      bpjs +
+      "</td><td>" +
+      tunkel +
+      "</td><td>" +
+      totalGaji +
+      "</td></tr>"
+  );
+  document.write("</tbody>");
+  document.write(
+    "<tfoot><tr><th colspan='7'>Total Gaji</th><td colspan='8'>" +
+      totalGaji +
+      "</td></tr></tfoot>"
+  );
+  document.write("</table>");
+</script>

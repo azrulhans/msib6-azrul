@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //pengulangan menggunakan increment (kecil le besar)
+      let angka;
+      for (angka = 1; angka <= 10; angka++) {
+        document.writeln(`<p> No.${angka}`);
+      }
+      document.writeln("<hr");
+      //pengulangan menggunakan decrement (besar ke kecil)
+      let angka1;
+      for (angka1 = 10; angka1 >= 0; angka1--) {
+        document.writeln(`<p> No. ${angka1}`);
+      }
+      document.writeln("<hr");
+
+      //looping bil ganjil
+      let ganjil;
+      for (ganjil = 1; ganjil <= 30; ganjil++) {
+        if (ganjil % 2 == 1) document.writeln(`<p> Bil ganjil ${ganjil}`); //modulus sisa 1
+      }
+      document.writeln("<hr");
+      //looping bil ganjil decrement
+      let ganjil_dec;
+      for (ganjil_dec = 30; ganjil_dec >= 0; ganjil_dec--) {
+        if (ganjil_dec % 2 == 1)
+          document.writeln(`<p> Bil ganjil  ${ganjil_dec}`); //modulus sisa 1
+      }
+      document.writeln("<hr");
+      //loping bilangan genap
+      let genap;
+      for (genap = 1; genap <= 30; genap++) {
+        if (genap % 2 == 0) document.writeln(`<p> Bil genap ${genap}`);
+      }
+      //menggunakan while
+      let y = 0;
+      while (y < 4) {
+        document.writeln(`<p> ${y}`);
+        y++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      let buah = ["Pepaya", "Mangga", "Pisang", "Jambu"];
+
+      buah[2] = "Jeruk";
+
+      for (let i = 0; i < buah.length; i++) {
+        document.writeln(`<p>${buah[i]}`);
+      }
+      console.table(buah);
+    </script>
+    // arrray objek (terdiri dari key dan value)
+    <script>
+      let p1 = { Nama: "Budi", Devisi: "SDM", Gaji: 7000000 };
+      let p2 = { Nama: "Andi", Devisi: "Marketing", Gaji: 8000000 };
+      let p3 = { Nama: "Ali", Devisi: "Lapangan", Gaji: 8000000 };
+
+      //Menambahkan Array di dalam arrray
+      let pegawai = [p1, p2, p3];
+
+      for (let i = 0; i < pegawai.length; i++) {
+        document.writeln(`<p> ${pegawai[i]}`);
+      }
+
+      //Menampilkan Data
+      for (p of pegawai) {
+        document.writeln(`<p> ${p.Nama}`);
+        document.writeln(`<p> ${p.Devisi}`);
+        document.writeln(`<p> ${p.Gaji}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tugas 4 js</title>
+    <link rel="stylesheet" href="css/style1.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Data Pegawai</h2>
+      <form id="pegawai">
+        <div class="form-group">
+          <label for="nama">Nama Pegawai:</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Masukkan Nama"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="jabatan">Jabatan Pegawai:</label>
+          <select id="jabatan" name="jabatan" required></select>
+        </div>
+        <div class="form-group">
+          <label for="status">Status Pegawai:</label>
+          <select id="status" name="status" required></select>
+        </div>
+
+        <button type="button" name="proses" onclick="data()">Kirim Data</button>
+      </form>
+    </div>
+    <script src="js/pegawai.js"></script>
+  </body>
+</html>
